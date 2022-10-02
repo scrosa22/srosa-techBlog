@@ -9,7 +9,7 @@ const path = require("path");
 const helpers = require('./utils/helpers');
 
 const app = express();
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: 'Super secret secret2',
@@ -34,6 +34,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(routes);
+
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "./public/views/homepage"))
+);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
