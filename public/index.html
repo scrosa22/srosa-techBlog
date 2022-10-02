@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to the tech blog</h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
+      {{#if loggedIn}}
+      <a href="/dashboard">Dashboard</a>
+      <a href="#" id="logout" class="navigation-link">Logout</a>
+      {{else}}
+      <a href="/login" class="navigation-link">Login</a>
+      <a href="/register" class="navigation-link">Register</a>
+      {{/if}}
+
+  </nav>
+  <main>
+    <aside>
+      <h2>Enjoy the peanut gallery!</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+
+<footer>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</footer>
+
+</body>
+
+</html>
