@@ -62,7 +62,7 @@ router.get('/create/', withAuth, async (req, res) => {
             ]
         });
         const postsList = data.map(x => x.get({plain: true}));
-        res.render('create-post', {postsList, loggedIn: req.session.loggedIn});
+        res.render('createPost', {postsList, loggedIn: req.session.loggedIn});
     } catch (err) {
         res.status(500).json(err);
     }

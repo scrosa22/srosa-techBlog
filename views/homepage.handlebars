@@ -1,5 +1,18 @@
+    <nav>
+      {{#if logged_in}}
+      <button class="btn btn-outline-dark" id="logout">Logout</button>
+      <button class="btn btn-outline-dark" id="dashboard"><a href="/dashboard">Dashboard</a></button>
+      {{/if}}
+      {{#unless logged_in}}
+      <a type="button" class="btn btn-outline-dark" href="/login">Login</a>
+      <a type="button" class="btn btn-outline-dark" href="/signup">Sign Up</a>
+      {{/unless}}
+    </nav>
+     
+</header>
+
 <article id="all-posts">
-    {{#each data.posts as |post|}}
+    {{#each data.postList as |post|}}
     {{> post-details post}}
     {{/each}}
 </article>
