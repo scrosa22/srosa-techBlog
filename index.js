@@ -35,9 +35,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "./public/views/layout/main"))
-);
+// app.get("/", (req, res) =>
+//   res.sendFile(path.join(__dirname, "./public/views/layout/main"))
+// );
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
